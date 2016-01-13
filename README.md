@@ -9,9 +9,9 @@ Users can login, post messages and vote previouses wall posts.
 
 
 <p align="center">
-  <img src="http://apidaysberlin2015.apistrat.com/wp-content/uploads/2015/04/Stamplay_logo_squared.png" width="200">
-  <img src="https://avatars0.githubusercontent.com/u/139426?v=3&s=400" width="200">
-  <img src="http://bower.io/img/bower-logo.svg" width="200">
+  <img src="images/stamplay.png" width="200">
+  <img src="images/angular.png" width="200">
+  <img src="images/bower.png" width="200">
 </p>
 
 
