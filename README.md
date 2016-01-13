@@ -9,13 +9,12 @@ Users can login, post messages and vote previouses wall posts.
 
 
 <p align="center">
-  <img src="images/stamplay.png" width="200">
   <img src="images/angular.png" width="200">
-  <img src="images/bower.png" width="200">
+  <img src="images/stamplay.png" width="200">
+  <img src="images/bower.svg" width="200">
 </p>
 
-
-
+Simple social wall, where users can post short messages and give feedbacks on wall content (like or dislike).
 
 <p align="center">
   <br/><b><a href="https://code.visualstudio.com/">Editor Used:</a></b><br/>
