@@ -1,5 +1,5 @@
 
-# Angular + Stamplay 
+# Angular + Stamplay (Demo)
 
 Andrea Galloni ([Twitter](https://twitter.com/andreagalloni92))
 
