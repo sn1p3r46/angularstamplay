@@ -3,6 +3,8 @@
 
 Andrea Galloni ([Twitter](https://twitter.com/andreagalloni92))
 
+Online Demo: [StamPlay](https://angularstamplay.stamplayapp.com/) ;)
+
 ### Simple example using social logins within Stamplay API 
 Users can login, post messages and vote previouses wall posts.
 
