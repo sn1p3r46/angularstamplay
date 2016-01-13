@@ -16,19 +16,12 @@ Users can login, post messages and vote previouses wall posts.
 
 
 
+
 <p align="center">
-  <br/><b><a href="https://atom.io/">Editor Used:</a></b><br/>
-  <a href="https://atom.io/">
-  <img src="https://cloud.githubusercontent.com/assets/72919/2874231/3af1db48-d3dd-11e3-98dc-6066f8bc766f.png" width="200">
+  <br/><b><a href="https://code.visualstudio.com/">Editor Used:</a></b><br/>
+  <a href="https://code.visualstudio.com/">
+  <img src="images/visualstudio.png" height="70px">
   </a>
 </p>
 
 
-## .
-
-
-<p align="center">
-  <a href="http://unitn.it/en">
-  <img src="https://raw.githubusercontent.com/sn1p3r46/introsde-2015-assignment-3-client/master/images/LogoUniTn.png" width="300">
-  </a>
-</p>
