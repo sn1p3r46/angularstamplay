@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Scotch Suggestions</title>
+
+    <!-- CSS -->
+    <!-- load bootstrap ionicons and custom css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+	
+	<!-- JS -->
+	<!-- load stamplay sdk, angular, angular-stamplay service -->
+	<!-- <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+    -->
+    <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/1.3.2/stamplay.min.js"></script>
+
+    <script>
+		// initiate stamplay app with app name
+		Stamplay.init('angularstamplay');
+	</script>
+    
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-stamplay/angular-stamplay.js"></script>
+    
+    <script src="app/services/suggestion.js"></script>
+    <script src="app/services/user.js"></script>
+    <script src="app/app.js"></script>
+
+
+</head>
+    <body ng-app="stamplayApp" ng-controller="MainController as main">
+
+    <section class="site-topper">
+    <div class="container">
+        <div class="page-header text-center">
+            	<h1>The message wall..</h1>
+		</div>
+
+        <div class="suggestion-container">
+            <div class="suggestion-page">
+                
+                <div class="login-message text-center" ng-show="!main.loggedIn">
+                <a href="/auth/v0/google/connect" class="btn btn-danger btn-lg">
+                    <i class="icon ion-social-google"></i>
+                    Google
+                </a>
+                <a href="/auth/v0/twitter/connect" class="btn btn-info btn-lg">
+                    <i class="icon ion-social-twitter"></i>
+                    Twitter
+                </a>
+                <a href="/auth/v0/facebook/connect" class="btn btn-primary btn-lg">
+                    <i class="icon ion-social-facebook"></i>
+                    Facebook
+                </a>
+                </div>
+                <div class="login-message text-center" ng-show="main.loggedIn" style="padding:10px;">
+                    <a ng-click="main.logout()" class="btn btn-danger">
+                        Logout
+                    </a>               
+                </div>                
+                <form 
+                class="text-center" 
+                name="suggestionForm" 
+                ng-submit="main.submitSuggestion(main.loggedUser.userId, main.suggestionData)" 
+                ng-show="main.loggedIn" 
+                novalidate>
+                    
+                <div class="form-group">
+                    <img ng-src="{{ main.loggedUser.profileImg }}" class="img-circle img-responsive" style="max-width:100px;">
+                    <h3>{{ main.loggedUser.displayName }}</h3>
+                </div>
+                
+                <div class="form-group">
+                    <label>Leave a Message</label>
+                    <textarea class="form-control" rows="5" name="text" ng-model="main.suggestionData.text" required></textarea>
+                </div>
+                    <button class="btn btn-danger btn-lg btn-block" ng-disabled="suggestionForm.$invalid">Submit Suggestion</button>
+                </form>      
+            </div>
+            <div class="suggestion-box">
+                Message Box
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-sm-3 col-lg-4 text-center" ng-repeat="suggestion in main.suggestionList">
+                <div class="suggestion">
+                    <p>{{ suggestion.instance.text }}</p>
+                    <div class="vote-buttons btn-group-vertical">
+                        {{ suggestion.instance.actions.votes.total }}
+                        <a class="btn btn-success" 
+                            ng-click="main.vote(suggestion, 'upvote')"
+                            ng-disabled="suggestion.instance.actions.votes.upvoted">
+                            <i class="icon ion-thumbsup"></i>
+                        </a>
+                        <a class="btn btn-danger" 
+                            ng-click="main.vote(suggestion, 'downvote')"
+                            ng-disabled="suggestion.instance.actions.votes.downvoted">
+                            <i class="icon ion-thumbsdown"></i>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+     </div> 
+    </section>
+</body>
+</html>

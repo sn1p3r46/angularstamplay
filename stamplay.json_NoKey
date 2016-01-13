@@ -1,0 +1,10 @@
+{
+  "appId": "angularstamplay",
+  "apiKey": "YOUR_API_KEY",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
